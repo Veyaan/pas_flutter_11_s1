@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:pas_flutter_11_s1/controllers/detail_makanan_controller.dart';
 import 'package:get/get.dart';
+import 'package:pas_flutter_11_s1/components/custom_textfield.dart';
+import 'package:pas_flutter_11_s1/components/custom_button.dart';
+import 'package:pas_flutter_11_s1/components/custom_text.dart';
 
 class DetailMakananPage extends StatelessWidget {
-  const DetailMakananPage({super.key});
+  DetailMakananPage({super.key});
+
+  final jumlah = TextEditingController();
+  var hasilHitung = 0.0.obs;
 
   @override
   Widget build(BuildContext context) {
@@ -91,6 +97,53 @@ class DetailMakananPage extends StatelessWidget {
             Text(
               controller.makanan.review,
               style: const TextStyle(fontSize: 15),
+            ),
+            
+            SizedBox(height: 30),
+
+            CustomTextField(
+              hint: "Jumlah makanan",
+              txtController: jumlah,
+            ),
+
+            SizedBox(height: 5),
+
+            CustomButton(
+            text: "Beli",
+            onPressed: () {
+              if (jumlah.text.isEmpty) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text("Angka tidak boleh kosong"),
+                    behavior: SnackBarBehavior.floating,
+                  ),
+                );
+                return;
+              }else{
+                hasilHitung.value = controller.makanan.harga*jumlah*0.05;
+              }
+            },
+          ),
+
+          SizedBox(height: 10),
+
+          Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(255, 234, 160, 124),
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(
+                  color: const Color.fromARGB(255, 255, 255, 255),
+                ),
+              ),
+              child: Obx(
+                () => CustomText(
+                  text: hasilHitung.value.toString(),
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  color: const Color.fromARGB(255, 11, 11, 11),
+                ),
+              ),
             ),
           ],
         ),

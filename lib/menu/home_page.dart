@@ -87,7 +87,7 @@ class Home extends StatelessWidget {
                                     ),
                                     const SizedBox(height: 4),
                                     Text(
-                                      "Rp"+(makanan.harga),
+                                      "Rp"+(makanan.harga.toString()),
                                       style: TextStyle(
                                         color: Colors.green[700],
                                         fontWeight: FontWeight.w600,

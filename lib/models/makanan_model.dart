@@ -1,6 +1,6 @@
 class MakananModel {
   String namaMakanan;
-  String harga;
+  double harga;
   String rating;
   String deskripsi;
   String review;

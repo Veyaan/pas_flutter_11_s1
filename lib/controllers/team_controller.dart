@@ -1,0 +1,15 @@
+import 'package:pas_flutter_11_s1/models/makanan_model.dart';
+import 'package:get/get.dart';
+import 'package:pas_flutter_11_s1/models/team_model.dart';
+
+class ListMakananController extends GetxController{
+
+  List<MakananModel> dataMakanan = [
+    MakananModel(namaMakanan: "Soto ayam", harga: 0, rating: "⭐⭐⭐⭐⭐", review: "Sotonya enak kuahnya mantap", deskripsi: "Soto ayam dengan kuah kaldu kuning yang gurih dan kaya rempah, disajikan lengkap dengan suwiran ayam, bihun, tauge, irisan telur, serta taburan bawang goreng.", gambarPath: "assets/images/soto.jpg"),
+    MakananModel(namaMakanan: "Ca kangkung", harga: 0, rating: "⭐⭐⭐⭐⭐", review: "Ca kangkungnya fresh enak pedasnya pas", deskripsi: "Tumis kangkung segar pilihan yang dimasak dengan bumbu bawang putih, cabai, dan saus tiram, menghasilkan tekstur sayur yang tetap renyah dan gurih.", gambarPath: "assets/images/kangkung.jpg"),
+    MakananModel(namaMakanan: "Ayam geprek", harga: 0, rating: "⭐⭐⭐⭐", review: "Sambelnya enak bikin nagih", deskripsi: "Ayam goreng tepung crispy yang digeprek bersama sambal bawang ulek segar yang pedasnya nampol dan bikin ketagihan, cocok disantap dengan nasi hangat.", gambarPath: "assets/images/geprek.jpg"),
+    MakananModel(namaMakanan: "Sate kambing", harga: 0, rating: "⭐⭐⭐⭐", review: "Satenya tidak bau amis atau prengus enak sekali", deskripsi: "Potongan daging kambing empuk pilihan yang dibakar menggunakan arang, disajikan dengan bumbu kecap manis, irisan bawang merah segar, dan potongan cabai rawit.", gambarPath: "assets/images/sate.jpg"),
+    MakananModel(namaMakanan: "Gulai kambing", harga: 0, rating: "⭐⭐⭐⭐⭐", review: "Gulainya enak sekali kuahnya enak", deskripsi: "Olahan daging kambing berkuah santan kental dengan bumbu rempah nusantara yang kuat (seperti kapulaga, cengkeh, dan serai), menghasilkan rasa yang gurih dan harum.", gambarPath: "assets/images/gulai.jpg"),
+    MakananModel(namaMakanan: "Nasi Goreng", harga: 0, rating: "⭐⭐⭐⭐⭐", review: "Nasi gorengnya enak sekali", deskripsi: "Nasi goreng yang disajikan dengan telur dadar, ayam suwir, dan bumbu rempah yang lezat.", gambarPath: "assets/images/nasi.jpg"),
+  ].obs;
+}
